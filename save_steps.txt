@@ -1,0 +1,11 @@
+1 Verifica el estado de tus cambios:
+        git status
+
+2 Agrega los cambios al área de preparación:
+        git add .
+
+3 Realiza un commit de tus cambios:
+        git commit -m "Descripción de los cambios realizados"
+
+4 Envía los cambios a tu repositorio en GitHub (reemplaza main con master si es necesario):
+        git push origin main
