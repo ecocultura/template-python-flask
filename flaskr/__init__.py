@@ -1,7 +1,7 @@
 from flask import Flask, request, make_response, redirect, render_template
 
 app = Flask(__name__)
-
+items = ["ITEM 1", "ITEM 2", "ITEM 3", "ITEM 4"]
 @app.route('/index')
 def index():
     user_dir = request.remote_addr
@@ -12,7 +12,12 @@ def index():
 @app.route("/show_address_info")
 def show_info():
     user_ip = request.cookies.get("user_ip_info")
-    return render_template("ip_info.html", user_ip=user_ip)
+    context = {
+        "user_ip":user_ip,
+        "items":items
+    }
+    return render_template("ip_info.html", **context)
+    #**context simplemente desbarata el diccionario context y permite tomar las claves como variables
 
 
 if __name__ == '__main__':
