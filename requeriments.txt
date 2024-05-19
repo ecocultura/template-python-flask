@@ -30,7 +30,8 @@ filelock==3.12.0
 flake8==6.0.0
 Flask==3.0.3
 Flask-Bootstrap==3.3.7.1
--e git+https://github.com/ecocultura/template-python-flask.git@17afe63669945da6f14599a66f02622948a32d53#egg=flaskr
+Flask-WTF==1.2.1
+-e git+https://github.com/ecocultura/template-python-flask.git@22c5060f31e83bfea7664b1a93dbef8775521934#egg=flaskr
 fqdn==1.5.1
 gitdb==4.0.10
 GitPython==3.1.31
@@ -138,4 +139,5 @@ webencodings==0.5.1
 websocket-client==1.5.1
 Werkzeug==3.0.3
 wrapt==1.15.0
+WTForms==3.1.2
 zipp==3.15.0

@@ -1,5 +1,6 @@
 {% extends 'base2.html'%}
 {%import 'macros.html' as macros%}
+{%import 'bootstrap/wtf.html' as wtf%}
 {%block title%}
     {{super()}}
     welcome to flask proyect
@@ -12,6 +13,10 @@
         <a href="{{url_for ('index')}}">Crear cookie</a>
         
     {%endif%}
+
+    <div class = "container">
+        {{wtf.quick_form(login_form)}}
+    </div>
 
     <ul>
     {% for item in items %}
