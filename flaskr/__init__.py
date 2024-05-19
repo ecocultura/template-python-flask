@@ -2,6 +2,11 @@ from flask import Flask, request, make_response, redirect, render_template
 
 app = Flask(__name__)
 items = ["ITEM 1", "ITEM 2", "ITEM 3", "ITEM 4"]
+
+@app.errorhandler(404)
+def not_found_endpint(error):
+    return render_template('404.html', error=error)
+
 @app.route('/index')
 def index():
     user_dir = request.remote_addr

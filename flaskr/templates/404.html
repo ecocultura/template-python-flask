@@ -1,0 +1,11 @@
+{%extends 'base2.html'%}
+
+{%block title%}
+    {{super()}}
+    404
+{%endblock%}
+
+{%block content%}
+    <h1>Lo sentimos, este url que esta buscando no existe en nuestra plataforma</h1>
+    <p>{{error}}</p>
+{%endblock%}
