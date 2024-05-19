@@ -1,6 +1,10 @@
 from flask import Flask, request, make_response, redirect, render_template
+from flask_bootstrap import Bootstrap
 
 app = Flask(__name__)
+Bootstrap = Bootstrap(app)
+
+
 items = ["ITEM 1", "ITEM 2", "ITEM 3", "ITEM 4"]
 
 @app.errorhandler(404)
