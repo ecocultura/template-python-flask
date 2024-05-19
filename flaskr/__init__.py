@@ -1,8 +1,9 @@
-from flask import Flask, request, make_response, redirect, render_template
+from flask import Flask, request, make_response, redirect, render_template, session
 from flask_bootstrap import Bootstrap
 
 app = Flask(__name__)
 Bootstrap = Bootstrap(app)
+app.config["SECRET_KEY"] = 'CLAVE SEGURA'
 
 
 items = ["ITEM 1", "ITEM 2", "ITEM 3", "ITEM 4"]
@@ -15,12 +16,12 @@ def not_found_endpint(error):
 def index():
     user_dir = request.remote_addr
     response = make_response(redirect("/show_address_info"))
-    response.set_cookie("user_ip_info", user_dir)
+    session["user_ip_info"] = user_dir
     return response
     
 @app.route("/show_address_info")
 def show_info():
-    user_ip = request.cookies.get("user_ip_info")
+    user_ip = session.get("user_ip_info")
     context = {
         "user_ip":user_ip,
         "items":items
