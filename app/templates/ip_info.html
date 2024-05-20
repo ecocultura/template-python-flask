@@ -7,11 +7,14 @@
 {%endblock%}
 
 {%block content%}
+    {%if username%}
+    <h1>BIENVENIDO USUARIO {{username}}</h1>
+    {%endif%}
+
     {%if user_ip %}
         <h1>hola, como estas?, tu direccion ip es {{user_ip}}</h1>
     {%else %}
-        <a href="{{url_for ('index')}}">Crear cookie</a>
-        
+        <a href="{{url_for ('index')}}">Crear cookie</a>   
     {%endif%}
 
     <div class = "container">
