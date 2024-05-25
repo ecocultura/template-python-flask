@@ -7,3 +7,8 @@ def create_app():
     bootstrap = Bootstrap(app)
     app.config.from_object(Config)
     return app
+
+if __name__ == "__main__":
+    app = create_app()
+    app.run()
+    
